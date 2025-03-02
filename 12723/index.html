@@ -28,7 +28,7 @@
 <meta property="og:description" content="在Termux上安装图形界面 一、准备工作所需工具 安卓设备：系统版本建议Android 9或更高  安装以下应用（均需从官方渠道下载）：  Termux（F-Droid） Termux:X11（GitHub Actions）   外设：建议连接蓝牙键鼠提升操作效率    二、安装Termux并配置环境1. 安装Termux　　从F-Droid下载并安装Termux。若无法访问，可通过第三方渠道获">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-01T13:18:41.000Z">
-<meta property="article:modified_time" content="2025-03-01T13:21:43.551Z">
+<meta property="article:modified_time" content="2025-03-01T13:22:35.000Z">
 <meta property="article:author" content="Alex">
 <meta property="article:tag" content="博客 个人">
 <meta name="twitter:card" content="summary">
@@ -78,7 +78,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-03-01T13:18:41.000Z">2025-03-01</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-03-01T13:21:43.551Z">2025-03-01</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-03-01T13:18:41.000Z">2025-03-01</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-03-01T13:22:35.000Z">2025-03-01</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -141,7 +141,7 @@
 
 <h3 id="3-输入以下内容"><a href="#3-输入以下内容" class="headerlink" title="3. 输入以下内容"></a>3. 输入以下内容</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> DISPLAY=:0</span><br><span class="line">termux-x11 :0 &amp;&gt;/dev/null &amp;</span><br><span class="line">startxfce4 &amp;&gt;/dev/null &amp;</span><br><span class="line">am start --user 0 -n com.termux.x11/.MainActivity &amp;&gt;/dev/null</span><br></pre></td></tr></table></figure>
 
-<h3 id="4-保存并赋予权限"><a href="#4-保存并赋予权限" class="headerlink" title="4. 保存并赋予权限"></a>4. 保存并赋予权限</h3><p>　　按 <code>Ctrl+O</code>​ 保存，<code>Ctrl+X</code>​ 退出编辑器，然后运行：</p>
+<h3 id="4-保存并赋予权限"><a href="#4-保存并赋予权限" class="headerlink" title="4. 保存并赋予权限"></a>4. 保存并赋予权限</h3><p>　　按 <code>esc</code>​ ，输入<code>:wq</code>保存​并退出编辑器，然后运行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x startdesk</span><br></pre></td></tr></table></figure>
 
 <h3 id="5-使用脚本启动"><a href="#5-使用脚本启动" class="headerlink" title="5. 使用脚本启动"></a>5. 使用脚本启动</h3><p>　　此后只需输入 <code>startdesk</code>​ 即可一键启动桌面。</p>
