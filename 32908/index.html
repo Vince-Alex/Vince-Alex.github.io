@@ -6,7 +6,7 @@
   <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
   
   
-  <meta name="generator" content="Hexo 7.3.0">
+  <meta name="generator" content="Hexo 8.1.1">
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   
   <meta name="renderer" content="webkit">
@@ -20,16 +20,16 @@
   <title>VDDT使用指南 - 〇の窝</title>
 
   
-    <meta name="description" content="概述　　VDDT-beta.py 是一款基于 yt-dlp 的多功能下载器，旨在为用户提供了一个简单易用的命令行界面，用于下载和管理各种在线视频和音频内容。它支持多种下载模式、格式选择、自定义配置以及批量下载功能，满足不同用户的多样化需求。 功能特点 多种下载模式 ：支持视频 + 音频自动合并、仅视频、仅音频以及手动选择视频 + 音频格式等多种下载模式，满足不同场景下的下载需求。 丰富的格式选择">
+    <meta name="description" content="概述　　VDDT（Video Downloader &amp; Transcoder Tool）是一款基于 yt-dlp 的多功能视频下载与转码工具，采用模块化架构设计，提供命令行界面（CLI）与终端图形界面（TUI）两种交互方式。项目经过多次迭代，从最初的单文件脚本发展为支持依赖自动检查、离线转码、配置持久化、日志记录等功能的完整工具集。 项目架构　　项目包含三个版本分支，可根据需求选择使用：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VDDT使用指南">
 <meta property="og:url" content="https://vince-alex.pages.dev/32908/">
 <meta property="og:site_name" content="〇の窝">
-<meta property="og:description" content="概述　　VDDT-beta.py 是一款基于 yt-dlp 的多功能下载器，旨在为用户提供了一个简单易用的命令行界面，用于下载和管理各种在线视频和音频内容。它支持多种下载模式、格式选择、自定义配置以及批量下载功能，满足不同用户的多样化需求。 功能特点 多种下载模式 ：支持视频 + 音频自动合并、仅视频、仅音频以及手动选择视频 + 音频格式等多种下载模式，满足不同场景下的下载需求。 丰富的格式选择">
+<meta property="og:description" content="概述　　VDDT（Video Downloader &amp; Transcoder Tool）是一款基于 yt-dlp 的多功能视频下载与转码工具，采用模块化架构设计，提供命令行界面（CLI）与终端图形界面（TUI）两种交互方式。项目经过多次迭代，从最初的单文件脚本发展为支持依赖自动检查、离线转码、配置持久化、日志记录等功能的完整工具集。 项目架构　　项目包含三个版本分支，可根据需求选择使用：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://vince-alex.pages.dev/logo/logo.png">
-<meta property="article:published_time" content="2025-06-14T15:04:43.000Z">
-<meta property="article:modified_time" content="2025-06-14T15:13:59.000Z">
+<meta property="article:published_time" content="2026-05-02T02:10:00.000Z">
+<meta property="article:modified_time" content="2026-05-02T02:13:50.000Z">
 <meta property="article:author" content="Alex">
 <meta property="article:tag" content="博客 个人">
 <meta name="twitter:card" content="summary">
@@ -49,12 +49,10 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alex","sameAs":[],"image":"/logo/logo.png"},"dateCreated":"2025-06-14T23:04:43+08:00","dateModified":"2025-06-14T23:13:59+08:00","datePublished":"2025-06-14T23:04:43+08:00","description":"","headline":"VDDT使用指南","mainEntityOfPage":{"@type":"WebPage","@id":"https://vince-alex.pages.dev/32908/"},"publisher":{"@type":"Organization","name":"Alex","sameAs":[],"image":"/logo/logo.png","logo":{"@type":"ImageObject","url":"/logo/logo.png"}},"url":"https://vince-alex.pages.dev/32908/","thumbnailUrl":null,"image":[]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alex","sameAs":[],"image":"https://Vince-Alex.pages.dev/logo/logo.png"},"dateCreated":"2026-05-02T10:10:00+08:00","dateModified":"2026-05-02T10:13:50+08:00","datePublished":"2026-05-02T10:10:00+08:00","description":"","headline":"VDDT使用指南","mainEntityOfPage":{"@type":"WebPage","@id":"https://vince-alex.pages.dev/32908/"},"publisher":{"@type":"Organization","name":"Alex","sameAs":[],"image":"https://Vince-Alex.pages.dev/logo/logo.png","logo":{"@type":"ImageObject","url":"https://Vince-Alex.pages.dev/logo/logo.png"}},"url":"https://vince-alex.pages.dev/32908/","thumbnailUrl":null,"image":[]}</script>
   <link href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/style.css" rel="stylesheet"/>
 </head>
-<body>
-
-<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+<body><div id="l_cover"></div><div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
 
 
 <header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/logo/logo.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">〇の窝</div><div class="sub normal cap">To the time to life</div><div class="sub hover cap" style="opacity:0">Rather than to life in time</div></a></div></header>
@@ -81,7 +79,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-06-14T15:04:43.000Z">2025-06-14</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-06-14T15:13:59.000Z">2025-06-14</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2026-05-02T02:10:00.000Z">2026-05-02</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-05-02T02:13:50.000Z">2026-05-02</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -92,59 +90,189 @@
     </div>
     
   </div>
-  </div><article class="md-text content"><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>　　VDDT-beta.py 是一款基于 yt-dlp 的多功能下载器，旨在为用户提供了一个简单易用的命令行界面，用于下载和管理各种在线视频和音频内容。它支持多种下载模式、格式选择、自定义配置以及批量下载功能，满足不同用户的多样化需求。</p>
+  </div><article class="md-text content"><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>　　VDDT（Video Downloader &amp; Transcoder Tool）是一款基于 yt-dlp 的多功能视频下载与转码工具，采用模块化架构设计，提供命令行界面（CLI）与终端图形界面（TUI）两种交互方式。项目经过多次迭代，从最初的单文件脚本发展为支持依赖自动检查、离线转码、配置持久化、日志记录等功能的完整工具集。</p>
+<h4 id="项目架构"><a href="#项目架构" class="headerlink" title="项目架构"></a>项目架构</h4><p>　　项目包含三个版本分支，可根据需求选择使用：</p>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>位置</th>
+<th>版本号</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>VDDT.py</td>
+<td>根目录</td>
+<td>v1.2.0</td>
+<td>单文件版，适合快速使用</td>
+</tr>
+<tr>
+<td>VDDT-beta&#x2F;</td>
+<td>VDDT-beta&#x2F;</td>
+<td>v2.0.5-beta</td>
+<td>模块化 CLI 版，功能最完整，稳定</td>
+</tr>
+<tr>
+<td>DEBUG&#x2F;</td>
+<td>DEBUG&#x2F;</td>
+<td>v2.1.0</td>
+<td>TUI 终端图形界面版（实验性）</td>
+</tr>
+</tbody></table>
+<p><strong>推荐使用 VDDT-beta 版本</strong>，其代码结构清晰、功能完善，是当前的主力版本。</p>
 <h4 id="功能特点"><a href="#功能特点" class="headerlink" title="功能特点"></a>功能特点</h4><ol>
-<li>多种下载模式 ：支持视频 + 音频自动合并、仅视频、仅音频以及手动选择视频 + 音频格式等多种下载模式，满足不同场景下的下载需求。</li>
-<li>丰富的格式选择 ：能够获取并列出给定 URL 的所有可用格式，包括视频和音频的编码、分辨率、文件大小等详细信息，方便用户根据需求选择合适的格式进行下载。</li>
-<li>自定义配置 ：提供自定义文件名模板、下载目录设置、Cookie 文件管理等功能，用户可以根据自己的喜好和需求对下载文件进行个性化定制。</li>
-<li>下载辅助功能 ：支持下载字幕、嵌入视频封面、下载 B 站弹幕等辅助功能，丰富下载内容，提升用户体验。</li>
-<li>转码与调整 ：在下载后可对视频进行转码或调整分辨率、码率等操作，满足用户对视频质量和文件大小的不同要求。</li>
-<li>批量下载 ：支持从文本文件读取多个链接进行批量下载，提高下载效率，方便用户一次性处理大量下载任务。</li>
+<li><p><strong>多种下载模式</strong>：支持视频+音频自动合并、仅视频、仅音频以及手动选择视频+音频格式等多种下载模式。</p>
+</li>
+<li><p><strong>丰富的格式选择</strong>：能够获取并列出给定 URL 的所有可用格式，包括分辨率和文件大小等详细信息。</p>
+</li>
+<li><p><strong>自定义配置</strong>：提供自定义文件名模板、下载目录设置、Cookie 文件管理等功能。</p>
+</li>
+<li><p><strong>下载辅助功能</strong>：支持下载字幕、嵌入视频封面、下载 B 站弹幕等辅助功能。</p>
+</li>
+<li><p><strong>离线转码</strong>：支持对已下载视频进行离线转码，包括 AMV 格式转换（160x112 低分辨率）和通用格式转换（MP4&#x2F;MKV&#x2F;AVI&#x2F;MOV 等），支持自定义分辨率，实时显示转码进度。</p>
+</li>
+<li><p><strong>批量下载</strong>：支持从文本文件读取多个链接进行批量下载。</p>
+</li>
+<li><p><strong>依赖自动检测</strong>：启动时自动检查并安装缺失的 Python 依赖库。</p>
+</li>
+<li><p><strong>终端图形界面（TUI）</strong>（实验性）：基于 curses 实现的可视化菜单界面，支持键盘导航、对话框操作，提供更友好的交互体验。</p>
+</li>
+<li><p><strong>日志记录系统</strong>：支持彩色控制台输出和文件日志轮转，方便问题排查。</p>
+</li>
+<li><p><strong>配置持久化</strong>：配置以 JSON 格式保存，支持下载、转码、网络、界面等分类配置。</p>
+</li>
 </ol>
 <h4 id="环境依赖"><a href="#环境依赖" class="headerlink" title="环境依赖"></a>环境依赖</h4><ol>
-<li>Python ：确保已安装 Python 3.x 版本。</li>
-<li>yt-dlp ：通过 pip 安装，命令为 <code>pip install yt-dlp</code>​。</li>
-<li>ffmpeg ：用于视频合并、转码、嵌入封面等功能，需提前安装并配置好环境变量。</li>
+<li><strong>Python</strong>：3.8 或更高版本。</li>
+<li><strong>yt-dlp</strong>：核心下载引擎，<code>pip install yt-dlp</code>。</li>
+<li><strong>ffmpeg</strong>：用于视频合并、转码、嵌入封面等，需提前安装并配置环境变量。</li>
+<li><strong>ffmpeg_progress_yield</strong>：离线转码进度显示，<code>pip install ffmpeg_progress_yield</code>。</li>
+<li><strong>tqdm</strong>：转码进度条美化，<code>pip install tqdm</code>。</li>
+<li><strong>colorama</strong>：终端彩色输出，<code>pip install colorama</code>。</li>
 </ol>
-<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><h6 id="单个视频下载"><a href="#单个视频下载" class="headerlink" title="单个视频下载"></a>单个视频下载</h6><ol>
-<li>运行脚本 ：在命令行中输入 <code>python VDDT-beta.py</code>​ 启动下载器。</li>
-<li>选择操作 ：输入 <code>1</code>​ 选择下载单个视频 &#x2F; 链接。</li>
-<li>输入链接 ：输入目标视频的 URL 地址。</li>
-<li>模式选择 ：根据提示选择下载模式，如视频 + 音频自动合并、仅视频、仅音频或手动选择视频 + 音频格式。</li>
-<li>格式选择 ：如果是视频 + 音频自动合并模式，脚本会自动选择最佳视频格式和音频格式进行合并；如果是手动选择模式，根据列出的格式列表输入对应的序号选择所需的格式。</li>
-<li>自定义配置（可选） ：根据需要选择是否使用自定义文件名模板、下载字幕、嵌入视频封面、下载弹幕以及进行转码或调整分辨率等操作。</li>
-<li>开始下载 ：确认配置后，脚本开始下载任务，并显示下载进度。</li>
-</ol>
-<h6 id="批量下载"><a href="#批量下载" class="headerlink" title="批量下载"></a>批量下载</h6><ol>
-<li>准备链接文件 ：将多个视频链接保存到一个文本文件中，每行一个链接。</li>
-<li>运行脚本并选择操作 ：运行脚本后输入 <code>2</code>​ 选择批量下载。</li>
-<li>输入文件路径 ：输入包含链接的文本文件路径，或者按回车使用默认的 <code>download_list.txt</code>​ 文件。</li>
-<li>后续步骤 ：后续操作与单个视频下载类似，脚本会依次处理文件中的每个链接，按照用户的选择进行下载和相关配置。</li>
-</ol>
-<h4 id="代码结构与关键函数说明"><a href="#代码结构与关键函数说明" class="headerlink" title="代码结构与关键函数说明"></a>代码结构与关键函数说明</h4><div class="tag-plugin colorful folders" ><details class="folder" index="0"><summary><p>主函数 <code>main()</code></p>
-</summary><div class="body"><p>​</p><ul><li>负责整个下载器的启动和运行流程控制。</li><li>显示欢迎信息、使用提示以及当前的下载目录等基本设置。</li><li>提供操作选择菜单，根据用户输入调用相应的下载处理函数。</li></ul></div></details><details class="folder" index="1"><summary><p>函数 <code>ask(prompt)</code></p>
-</summary><div class="body"><p>​</p><ul><li>用于向用户询问是 &#x2F; 否问题，并返回布尔值，方便在脚本中根据用户选择进行不同的操作分支。</li></ul></div></details><details class="folder" index="2"><summary><p>函数 <code>convert_to_netscape_cookie(cookie_str, output_file)</code></p>
-</summary><div class="body"><p>​</p><ul><li>将原始 cookie 字符串转换为 Netscape 格式，并保存到指定文件中。这在需要使用 cookie 进行登录或访问受限制内容时非常有用。</li></ul></div></details><details class="folder" index="3"><summary><p>函数 <code>sanitize_filename(name)</code></p>
-</summary><div class="body"><p>​</p><ul><li>对文件名进行清洗，移除 Windows 文件名中的非法字符，确保下载的文件能够正常保存。</li></ul></div></details><details class="folder" index="4"><summary><p>函数 <code>progress_hook(d)</code></p>
-</summary><div class="body"><p>​</p><ul><li>yt-dlp 下载进度的回调函数，用于在下载过程中实时显示下载进度、已下载数据量、总数据量以及预计剩余时间等信息，以可视化的方式让用户了解下载状态。</li></ul></div></details><details class="folder" index="5"><summary><p>函数 <code>suggest_best_quality(formats)</code></p>
-</summary><div class="body"><p>​</p><ul><li>基于视频的高度，从可用格式中推荐最佳的视频质量格式 ID，方便用户快速选择高质量的视频进行下载。</li></ul></div></details><details class="folder" index="6"><summary><p>函数 <code>get_format_lists(url, ydl_opts)</code></p>
-</summary><div class="body"><p>​</p><ul><li>获取并列出给定 URL 的所有可用格式信息，包括格式 ID、扩展名、分辨率、视频编码、音频编码和文件大小等，为用户选择下载格式提供依据。</li></ul></div></details><details class="folder" index="7"><summary><p>函数 <code>download(url, format_id, output_dir, ydl_opts, info_dict=None)</code></p>
-</summary><div class="body"><p>​</p><ul><li>核心的下载函数，根据用户选择的格式 ID 和相关配置，使用 yt-dlp 进行视频或音频的下载操作，并处理下载过程中的各种情况，如成功完成、下载失败或错误等。</li></ul></div></details><details class="folder" index="8"><summary><p>函数 <code>handle_single_download(url, base_ydl_opts, output_dir)</code>​</p>
-</summary><div class="body"><p>​</p><ul><li>负责处理单个 URL 的下载过程，包括引导用户选择下载模式、获取格式列表、选择格式以及应用各种自定义配置等操作。</li></ul></div></details><details class="folder" index="9"><summary><p>函数 <code>prepare_cookies_netscape(target_url)</code></p>
-</summary><div class="body"><p>​</p><ul><li>根据目标 URL 准备和转换 Netscape 格式的 cookie 文件，以便在下载过程中能够正确使用 cookie 进行身份验证或访问受限制的内容。</li></ul></div></details></div>
+<blockquote>
+<p>提示：VDDT-beta 版本启动时<strong>会自动检测并提示安装缺失依赖</strong>，用户只需确认即可。</p>
+</blockquote>
+<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><h5 id="1-VDDT-beta-版本（推荐）"><a href="#1-VDDT-beta-版本（推荐）" class="headerlink" title="1. VDDT-beta 版本（推荐）"></a>1. VDDT-beta 版本（推荐）</h5><p>进入 beta 目录，运行 <code>main.py</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> VDDT-beta</span><br><span class="line">python main.py</span><br></pre></td></tr></table></figure>
 
-<h4 id="自定义配置与高级使用技巧"><a href="#自定义配置与高级使用技巧" class="headerlink" title="自定义配置与高级使用技巧"></a>自定义配置与高级使用技巧</h4><div class="tag-plugin colorful folders" ><details class="folder" index="0"><summary><p>自定义文件名模板</p>
-</summary><div class="body"><p>　　在下载过程中，用户可以选择使用自定义文件名模板来命名下载的文件。脚本支持多种变量，如视频标题 (<code>%(title)s</code>​)、上传者名称 (<code>%(uploader)s</code>​)、上传日期 (<code>%(upload_date)s</code>​)、文件扩展名 (<code>%(ext)s</code>​)、视频 ID (<code>%(id)s</code>​) 和分辨率 (<code>%(resolution)s</code>​) 等。通过合理组合这些变量，用户可以创建符合自己需求的文件命名规则，方便文件的管理和查找。</p></div></details><details class="folder" index="1"><summary><p>Cookie 文件管理</p>
-</summary><div class="body"><p>　　对于需要登录或有访问限制的视频内容，用户可以将获取到的 cookie 信息保存到指定文件中，并将其放置在脚本所在目录下的 <code>cookies</code>​ 文件夹内。脚本会自动检测并转换 cookie 文件为 Netscape 格式，以便在下载时正确使用。目前支持三种命名方式的 cookie 文件：完整域名（如 <code>bilibili.com.ck</code>​）、带下划线的域名（如 <code>bilibili_com.ck</code>​）和通用 cookie 文件（<code>common.ck</code>​），用户可以根据实际情况选择合适的文件命名方式。</p></div></details><details class="folder" index="2"><summary><p>批量下载任务管理</p>
-</summary><div class="body"><p>　　在进行批量下载时，用户可以将多个链接保存到一个文本文件中，脚本会依次读取每个链接并按照指定的配置进行下载。为了提高批量下载的效率和灵活性，用户可以在链接文件中添加注释（以 <code>#</code>​ 开头的行），或者通过编辑链接文件来调整下载顺序或筛选特定的下载任务。</p></div></details></div>
+<p>程序将自动检测依赖，缺失时会询问是否自动安装。主菜单提供以下操作：</p>
+<ul>
+<li><strong>下载单个视频&#x2F;链接</strong>：输入视频 URL，选择下载模式和格式，设置字幕、封面、弹幕等选项。</li>
+<li><strong>批量下载</strong>：从文本文件读取多个链接，逐一下载。</li>
+<li><strong>离线转码</strong>：将本地视频文件转码为其他格式。</li>
+</ul>
+<h6 id="下载模式说明"><a href="#下载模式说明" class="headerlink" title="下载模式说明"></a>下载模式说明</h6><table>
+<thead>
+<tr>
+<th>模式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. 视频+音频自动合并</td>
+<td>自动选择最高画质视频 + 最佳音频，合并为 MP4</td>
+</tr>
+<tr>
+<td>2. 仅视频</td>
+<td>列出所有视频格式，用户手动选择</td>
+</tr>
+<tr>
+<td>3. 仅音频</td>
+<td>下载最佳音频并转换为 MP3 192kbps</td>
+</tr>
+<tr>
+<td>4. 手动选择视频+音频格式</td>
+<td>列出所有格式，可手动组合</td>
+</tr>
+</tbody></table>
+<h5 id="2-VDDT-py-单文件版"><a href="#2-VDDT-py-单文件版" class="headerlink" title="2. VDDT.py 单文件版"></a>2. VDDT.py 单文件版</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python VDDT.py</span><br></pre></td></tr></table></figure>
 
+<p>单文件版功能精简，所有代码集中在单一文件中，适合快速使用或移植。</p>
+<h5 id="3-DEBUG-TUI-版（实验性）"><a href="#3-DEBUG-TUI-版（实验性）" class="headerlink" title="3. DEBUG TUI 版（实验性）"></a>3. DEBUG TUI 版（实验性）</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> DEBUG</span><br><span class="line">python main.py</span><br></pre></td></tr></table></figure>
+
+<p>该版本启动后进入 curses 终端图形界面，支持键盘导航：</p>
+<ul>
+<li><strong>方向键 &#x2F; j&#x2F;k</strong>：上下导航</li>
+<li><strong>Enter</strong>：确认选择</li>
+<li><strong>数字键</strong>：快速选择菜单项</li>
+<li><strong>Q</strong>：返回&#x2F;退出</li>
+<li><strong>H</strong>：帮助</li>
+</ul>
+<blockquote>
+<p>注意：TUI 版需要支持 curses 的终端环境，部分 Android 终端可能不完全兼容。</p>
+</blockquote>
+<h5 id="离线转码功能"><a href="#离线转码功能" class="headerlink" title="离线转码功能"></a>离线转码功能</h5><p>独立于下载功能，可对本地视频文件进行转码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从 VDDT-beta 主菜单选择 &quot;离线转码&quot;</span></span><br><span class="line"><span class="comment"># 或在 VDDT-beta 目录下直接运行：</span></span><br><span class="line">python offline_transcoder.py</span><br></pre></td></tr></table></figure>
+
+<p>支持两种转码模式：</p>
+<ol>
+<li><strong>AMV 模式</strong>：转换为 160x112 低分辨率 AMV 格式，适用于便携设备</li>
+<li><strong>通用格式</strong>：可选择 MP4&#x2F;MKV&#x2F;AVI&#x2F;MOV&#x2F;FLV 等格式，可自定义分辨率</li>
+</ol>
+<p>转码过程中实时显示进度条，支持批量处理。</p>
+<h4 id="代码结构与关键模块说明"><a href="#代码结构与关键模块说明" class="headerlink" title="代码结构与关键模块说明"></a>代码结构与关键模块说明</h4><div class="tag-plugin colorful folders" ><details class="folder" index="0"><summary><p>VDDT-beta 模块架构</p>
+</summary><div class="body"><p>​</p><p>项目采用模块化设计，各模块职责明确：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">VDDT-beta/</span><br><span class="line">├── main.py                  # 主入口：菜单流程控制、版本信息</span><br><span class="line">├── check_deps.py            # 依赖自动检测与安装</span><br><span class="line">├── downloader_core.py        # 下载核心：格式获取、文件下载、Cookie管理</span><br><span class="line">├── downloader_handler.py     # 下载处理器：用户交互、模式选择、配置选项</span><br><span class="line">├── offline_transcoder.py     # 离线转码：AMV/通用格式转换，进度显示</span><br><span class="line">├── utils.py                 # 工具函数：输入询问、文件名清洗、进度回调、Cookie转换</span><br><span class="line">├── test_douyin.py           # 抖音下载测试脚本</span><br><span class="line">├── cookies/                 # Cookie 文件存放目录</span><br><span class="line">└── VDDT_Downloads/          # 默认下载目录</span><br></pre></td></tr></table></figure></div></details><details class="folder" index="1"><summary><p>模块 <code>check_deps.py</code></p>
+</summary><div class="body"><p>​</p><ul><li>定义需要检查的依赖库列表（yt_dlp、colorama、ffmpeg_progress_yield、tqdm、requests）。</li><li>启动时逐个导入检查，发现缺失则询问用户是否自动安装。</li><li>安装通过 <code>pip install</code> 子进程完成。</li></ul></div></details><details class="folder" index="2"><summary><p>模块 <code>downloader_core.py</code></p>
+</summary><div class="body"><p>​</p><p>核心下载逻辑，包含以下函数：</p><ul><li><strong><code>suggest_best_quality(formats)</code></strong>：基于视频高度智能推荐最高画质的格式 ID。</li><li><strong><code>get_format_lists(url, ydl_opts)</code></strong>：获取并列出所有可用格式，含格式 ID、扩展名、分辨率、视频编码、音频编码、文件大小等。</li><li><strong><code>download(url, format_id, output_dir, ydl_opts, info_dict)</code></strong>：核心下载函数，支持片段并发下载、重试机制、进度回调。</li><li><strong><code>prepare_cookies_netscape(target_url)</code></strong>：自动检测并转换 Cookie 文件为 Netscape 格式，支持三种命名方式。</li></ul></div></details><details class="folder" index="3"><summary><p>模块 <code>downloader_handler.py</code></p>
+</summary><div class="body"><p>​</p><ul><li><strong><code>handle_single_download(url, base_ydl_opts, output_dir)</code></strong>：处理单个 URL 的完整下载流程。引导用户选择模式、选择格式、配置字幕&#x2F;封面&#x2F;弹幕&#x2F;转码等选项。</li></ul></div></details><details class="folder" index="4"><summary><p>模块 <code>offline_transcoder.py</code></p>
+</summary><div class="body"><p>​</p><p>离线转码功能，基于 ffmpeg 实现：</p><ul><li><strong><code>parse_resolution(s)</code></strong>：解析用户输入的分辨率字符串（支持 <code>1920*1080</code>、<code>1080p</code>、<code>1920x1080</code>）。</li><li><strong><code>get_video_files(folder)</code></strong>：扫描文件夹中的视频文件（支持 mp4&#x2F;mkv&#x2F;avi&#x2F;mov&#x2F;flv&#x2F;wmv&#x2F;m4v&#x2F;ts&#x2F;webm）。</li><li><strong><code>run_offline_transcoder()</code></strong>：主流程，提供文件选择、模式选择、格式和分辨率设置，使用 FfmpegProgress + tqdm 实时显示进度。</li></ul></div></details><details class="folder" index="5"><summary><p>模块 <code>utils.py</code></p>
+</summary><div class="body"><p>​</p><p>通用工具函数：</p><ul><li><strong><code>ask(prompt)</code></strong>：询问用户是&#x2F;否问题并返回布尔值。</li><li><strong><code>convert_to_netscape_cookie(cookie_str, output_file)</code></strong>：将原始 cookie 字符串转换为 Netscape 格式并保存。</li><li><strong><code>sanitize_filename(name)</code></strong>：移除 Windows 文件名中的非法字符。</li><li><strong><code>progress_hook(d)</code></strong>：yt-dlp 下载进度的回调函数，可视化加载条显示进度、速度、ETA。</li></ul></div></details></div>
+
+<h4 id="配置文件管理"><a href="#配置文件管理" class="headerlink" title="配置文件管理"></a>配置文件管理</h4><p>DEBUG TUI 版本支持完整的配置管理系统：</p>
+<ul>
+<li>配置文件：<code>vddt_config.json</code>（JSON 格式）。</li>
+<li>配置分类：<ul>
+<li><strong>下载配置</strong>：输出目录、默认模式、并发数、重试次数、文件名模板、字幕、封面、弹幕。</li>
+<li><strong>转码配置</strong>：默认预设、编码器、CRF 值、码率。</li>
+<li><strong>网络配置</strong>：代理服务器、超时时间、User-Agent。</li>
+<li><strong>界面配置</strong>：进度条长度、详细输出、颜色开关。</li>
+</ul>
+</li>
+<li>配置加载失败时自动回退到默认值。</li>
+</ul>
+<h4 id="Cookie-文件管理"><a href="#Cookie-文件管理" class="headerlink" title="Cookie 文件管理"></a>Cookie 文件管理</h4><p>　　对于需要登录或有访问限制的视频内容，将 cookie 保存到 <code>cookies/</code> 文件夹内。支持三种命名方式（按优先级）：</p>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>域名.ck</code></td>
+<td><code>bilibili.com.ck</code></td>
+<td>完整域名</td>
+</tr>
+<tr>
+<td><code>域名_下划线.ck</code></td>
+<td><code>bilibili_com.ck</code></td>
+<td>下划线代替点号</td>
+</tr>
+<tr>
+<td><code>common.ck</code></td>
+<td><code>common.ck</code></td>
+<td>通用 cookie 文件</td>
+</tr>
+</tbody></table>
+<p>程序自动检测并转换为 Netscape 格式，无需手动操作。</p>
+<h4 id="日志系统"><a href="#日志系统" class="headerlink" title="日志系统"></a>日志系统</h4><p>DEBUG TUI 版内置日志系统：</p>
+<ul>
+<li><strong>控制台输出</strong>：彩色分级日志（DEBUG&#x2F;INFO&#x2F;WARNING&#x2F;ERROR）。</li>
+<li><strong>文件日志</strong>：自动保存到 <code>logs/vddt_YYYYMMDD.log</code>。</li>
+<li><strong>日志轮转</strong>：单文件最大 5MB，保留 3 个备份。</li>
+<li>便捷调用：<code>get_logger()</code> 获取全局日志实例，支持 <code>debug()</code>、<code>info()</code>、<code>warning()</code>、<code>error()</code>、<code>exception()</code> 等方法。</li>
+</ul>
 <h4 id="常见问题与解决方法"><a href="#常见问题与解决方法" class="headerlink" title="常见问题与解决方法"></a>常见问题与解决方法</h4><div class="tag-plugin colorful folders" ><details class="folder" index="0"><summary><p>下载失败</p>
-</summary><div class="body"><ul><li>网络问题 ：检查网络连接是否正常，是否能够正常访问目标视频链接所在的网站。</li><li>链接无效或过期 ：确认输入的视频链接是否正确，是否已经过期或被删除。</li><li>需要登录或受地理限制 ：如果视频需要登录才能访问，确保已正确配置并使用了有效的 cookie 文件；对于受地理限制的内容，可能需要使用代理服务器或 VPN 来绕过限制。</li></ul></div></details><details class="folder" index="1"><summary><p>文件名乱码或无法保存</p>
-</summary><div class="body"><ul><li>检查输入的文件名是否包含非法字符，使用脚本提供的 <code>sanitize_filename</code>​ 函数清洗文件名后重试。</li><li>确保系统的区域设置和编码格式正确，避免因编码问题导致文件名乱码。</li></ul></div></details><details class="folder" index="2"><summary><p>转码失败</p>
-</summary><div class="body"><ul><li>检查 ffmpeg 是否已正确安装并配置好环境变量，确保脚本能够调用 ffmpeg 进行转码操作。</li><li>确认转码参数是否正确，是否符合 ffmpeg 的要求和格式规范。</li></ul></div></details><details class="folder" index="3"><summary><p>字幕或封面无法下载或嵌入</p>
-</summary><div class="body"><ul><li>部分视频可能不支持字幕或封面下载，检查目标视频是否提供字幕或封面资源。</li><li>如果支持字幕或封面下载，但下载或嵌入失败，可能与视频格式或编码有关，尝试选择不同的下载格式或调整相关配置。</li></ul></div></details></div>
+</summary><div class="body"><ul><li><strong>网络问题</strong>：检查网络连接和代理设置。</li><li><strong>链接无效或过期</strong>：确认视频链接是否正确。</li><li><strong>需要登录</strong>：配置有效的 cookie 文件到 <code>cookies/</code> 目录。</li><li><strong>地理限制</strong>：可能需要使用代理服务器。</li></ul></div></details><details class="folder" index="1"><summary><p>Cookie 无效</p>
+</summary><div class="body"><ul><li>确保 cookie 文件位于 <code>cookies/</code> 目录下。</li><li>文件名符合规范（如 <code>bilibili.com.ck</code>）。</li><li>Cookie 未过期，更新后重新保存。</li></ul></div></details><details class="folder" index="2"><summary><p>转码失败</p>
+</summary><div class="body"><ul><li>检查 ffmpeg 是否已安装并可用。</li><li>确认输入文件未被损坏或加密。</li><li>自定义分辨率参数需符合格式规范（如 <code>1920*1080</code>、<code>720p</code>）。</li></ul></div></details><details class="folder" index="3"><summary><p>依赖安装失败</p>
+</summary><div class="body"><ul><li>重试时使用 <code>pip install &lt;包名&gt;</code> 手动安装。</li><li>Android 环境可能需要先更新 pip（<code>pip install --upgrade pip</code>）。</li></ul></div></details><details class="folder" index="4"><summary><p>文件名乱码</p>
+</summary><div class="body"><ul><li>系统区域设置和编码格式需正确。</li><li>使用 <code>sanitize_filename</code> 函数清洗文件名中的非法字符。</li></ul></div></details></div>
 
-<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>　　VDDT-beta.py 作为一个基于 yt-dlp 的多功能下载器，为用户提供了丰富实用的功能和灵活的配置选项，满足了不同用户在下载在线视频和音频内容时的多样化需求。无论是个人用户还是开发者，都可以通过这款工具轻松地获取和管理自己感兴趣的多媒体资源。在未来的发展中，随着 yt-dlp 的不断更新和优化，VDDT-beta.py 也有望进一步提升性能和功能，为用户带来更加出色的使用体验。</p>
+<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>　　VDDT 从最初的单文件下载脚本，逐步演化为支持依赖检测、离线转码、配置管理和终端图形界面的多功能工具集。VDDT-beta 作为主力版本，采用模块化架构，代码清晰可维护，功能完整稳定。DEBUG 目录下的 TUI 版本则探索了更友好的终端交互方式。未来随着 yt-dlp 的更新，VDDT 将持续跟进优化，为用户带来更完善的使用体验。</p>
 </article>
 <div class="article-footer">
     <section id="license">
@@ -190,10 +318,9 @@
 
 <footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">Alex</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
-<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
-<div class="widgets">
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right"><div class="widgets">
 
-<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E7%89%B9%E7%82%B9"><span class="toc-text">功能特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E4%BE%9D%E8%B5%96"><span class="toc-text">环境依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8D%95%E4%B8%AA%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD"><span class="toc-text">单个视频下载</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD"><span class="toc-text">批量下载</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84%E4%B8%8E%E5%85%B3%E9%94%AE%E5%87%BD%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="toc-text">代码结构与关键函数说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE%E4%B8%8E%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="toc-text">自定义配置与高级使用技巧</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-text">常见问题与解决方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-text">结语</span></a></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>参与讨论</span></a></div></widget>
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84"><span class="toc-text">项目架构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E7%89%B9%E7%82%B9"><span class="toc-text">功能特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E4%BE%9D%E8%B5%96"><span class="toc-text">环境依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-VDDT-beta-%E7%89%88%E6%9C%AC%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="toc-text">1. VDDT-beta 版本（推荐）</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E6%A8%A1%E5%BC%8F%E8%AF%B4%E6%98%8E"><span class="toc-text">下载模式说明</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-VDDT-py-%E5%8D%95%E6%96%87%E4%BB%B6%E7%89%88"><span class="toc-text">2. VDDT.py 单文件版</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-DEBUG-TUI-%E7%89%88%EF%BC%88%E5%AE%9E%E9%AA%8C%E6%80%A7%EF%BC%89"><span class="toc-text">3. DEBUG TUI 版（实验性）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A6%BB%E7%BA%BF%E8%BD%AC%E7%A0%81%E5%8A%9F%E8%83%BD"><span class="toc-text">离线转码功能</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84%E4%B8%8E%E5%85%B3%E9%94%AE%E6%A8%A1%E5%9D%97%E8%AF%B4%E6%98%8E"><span class="toc-text">代码结构与关键模块说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-text">配置文件管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookie-%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-text">Cookie 文件管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F"><span class="toc-text">日志系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-text">常见问题与解决方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-text">结语</span></a></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>参与讨论</span></a></div></widget>
 </div></aside><div class='float-panel'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
@@ -206,7 +333,25 @@
 
 
 <script type="text/javascript">
-  window.canonical = {"originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  window.canonical = {"closeEnable":true,"closeText":"关闭提示","originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  window.canonical["param"] = {"permalink":"https://vince-alex.pages.dev/32908/","checklink":"/js/plugins/video.js"};
+  // Fix: Ensure page is at the correct top position on data load
+  if (history.scrollRestoration) {
+    history.scrollRestoration = 'auto';
+  }
+  (function() {
+    const scrollHandler = () => {
+      const wikiCover = document.querySelector('#l_cover .l_cover.wiki');
+      const startEl = document.getElementById('start');
+      if (wikiCover && startEl) {
+        window.scrollTo(0, startEl.offsetTop);
+      } else {
+        window.scrollTo(0, 0);
+      }
+    };
+    if (document.readyState !== 'loading') scrollHandler();
+    else document.addEventListener('DOMContentLoaded', scrollHandler);
+  })();
   const ctx = {
     date_suffix: {
       just: `刚刚`,
@@ -239,8 +384,6 @@
     marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
     lazyload: `/%5Bobject%20Object%5D`
   }
-  
-
 </script>
 
 <script type="text/javascript">
@@ -263,9 +406,10 @@
       this.list.push(f);
     };
     this.remove = (name) => {
-      for (let index = 0; index < this.list.length; index++) {
+      // 倒序遍历避免 splice 后的索引问题
+      for (let index = this.list.length - 1; index >= 0; index--) {
         const e = this.list[index];
-        if (e.name == name) {
+        if (e.name === name) {
           this.list.splice(index, 1);
         }
       }
@@ -286,8 +430,15 @@
   }
 
   const utils = {
+    // 已加载样式缓存
+    _loadedStyles: new Set(),
+
     // 懒加载 css https://github.com/filamentgroup/loadCSS
     css: (href, before, media, attributes) => {
+      // 如果样式已加载，直接返回 null
+      if (utils._loadedStyles.has(href)) {
+        return null;
+      }
       var doc = window.document;
       var ss = doc.createElement("link");
       var ref;
@@ -308,6 +459,8 @@
       ss.rel = "stylesheet";
       ss.href = href;
       ss.media = "only x";
+      // 标记样式为已加载 (在创建元素后立即标记，防止重复创建)
+      utils._loadedStyles.add(href);
       function ready(cb) {
         if (doc.body) {
           return cb();
@@ -345,11 +498,22 @@
       return ss;
     },
 
+    // 已加载脚本缓存
+    _loadedScripts: new Set(),
+
+    // 已加载元素缓存 (使用 WeakSet 追踪元素实例,避免 PJAX 导航时的状态混淆)
+    _loadedElements: new WeakSet(),
+
     js: (src, opt) => new Promise((resolve, reject) => {
-      var script = document.createElement('script');
       if (src.startsWith('/')) {
         src = ctx.root + src.substring(1);
       }
+      // 如果脚本已加载，直接返回
+      if (utils._loadedScripts.has(src)) {
+        resolve();
+        return;
+      }
+      var script = document.createElement('script');
       script.src = src;
       if (opt) {
         for (let key of Object.keys(opt)) {
@@ -364,22 +528,42 @@
         const loadState = this.readyState
         if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
         script.onload = script.onreadystatechange = null
+        utils._loadedScripts.add(src);
         resolve()
       }
       document.head.appendChild(script)
     }),
 
-    jq: (fn) => {
+    // PJAX 事件监听器管理
+    _pjaxListeners: new Set(),
+    
+    jq: (fn, pjax = true) => {
       if (typeof jQuery === 'undefined') {
         utils.js(deps.jquery).then(fn)
       } else {
         fn()
       }
+      if (pjax && !fn._pjax_registered) {
+        document.addEventListener('pjax:complete', fn);
+        fn._pjax_registered = true;
+        utils._pjaxListeners.add(fn); // 追踪监听器以便清理
+      }
+    },
+    
+    // 清理所有 PJAX 事件监听器
+    cleanupPjaxListeners: () => {
+      utils._pjaxListeners.forEach(fn => {
+        document.removeEventListener('pjax:complete', fn);
+        fn._pjax_registered = false;
+      });
+      utils._pjaxListeners.clear();
     },
 
     onLoading: (el) => {
       if (el) {
-        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+        if ($(el).find('.loading-wrap').length === 0){
+          $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+        }
       }
     },
     onLoadSuccess: (el) => {
@@ -395,6 +579,10 @@
       }
     },
     request: (el, url, callback, onFailure) => {
+      // 检查元素实例是否已加载 (而不是检查属性)
+      if (el && utils._loadedElements.has(el)) {
+        return;
+      }
       const maxRetry = 3;
       let retryCount = 0;
 
@@ -424,6 +612,8 @@
             return resp;
           }).then(data => {
             if (timedOut) return;
+            // 标记元素实例为已加载
+            if (el) utils._loadedElements.add(el);
             utils.onLoadSuccess?.(el);
             callback(data);
             resolve(data);
@@ -482,7 +672,99 @@
       window.requestAnimationFrame(fn)
     },
     dark: {},
+
+    // 插件初始化管理器 - 统一处理 DOMContentLoaded 和 pjax:complete 事件
+    _pluginInitializers: [],
+    _pluginCleanups: new Map(), // 存储每个插件的清理函数
+    
+    initPlugin: (initFn, name, options = {}) => {
+      if (!initFn || typeof initFn !== 'function') return;
+      
+      // 避免重复注册
+      const pluginName = name || initFn.name;
+      if (utils._pluginInitializers.some(p => p.name === pluginName)) return;
+      
+      // 包装初始化函数，添加防重复执行的保护
+      const wrappedInit = () => {
+        try {
+          // 在执行前先清理旧的资源
+          if (utils._pluginCleanups.has(pluginName)) {
+            const cleanup = utils._pluginCleanups.get(pluginName);
+            if (typeof cleanup === 'function') {
+              cleanup();
+            }
+          }
+          
+          // 执行初始化，可能返回清理函数
+          const cleanup = initFn();
+          
+          // 如果初始化函数返回了清理函数，保存它
+          if (typeof cleanup === 'function') {
+            utils._pluginCleanups.set(pluginName, cleanup);
+          }
+        } catch (error) {
+          console.error(`[Plugin ${pluginName}] 初始化失败:`, error);
+        }
+      };
+      
+      utils._pluginInitializers.push({ 
+        fn: wrappedInit, 
+        name: pluginName,
+        options: options 
+      });
+      
+      // 如果 DOM 已经加载完成，立即执行
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        wrappedInit();
+      } else {
+        // 否则等待 DOMContentLoaded
+        window.addEventListener('DOMContentLoaded', wrappedInit, { once: true });
+      }
+    },
+
+    // 重新初始化所有插件（用于 PJAX 等场景）
+    reinitPlugins: () => {
+      utils._pluginInitializers.forEach(plugin => {
+        // 跳过标记为不需要重新初始化的插件
+        if (plugin.options.skipReinit) return;
+        
+        try {
+          plugin.fn();
+        } catch (error) {
+          console.error(`[Plugin ${plugin.name}] 重新初始化失败:`, error);
+        }
+      });
+    },
+    
+    // 清理所有插件资源
+    cleanupPlugins: () => {
+      utils._pluginCleanups.forEach((cleanup, name) => {
+        try {
+          cleanup();
+        } catch (error) {
+          console.error(`[Plugin ${name}] 清理失败:`, error);
+        }
+      });
+      utils._pluginCleanups.clear();
+    },
+    
+    // 清理所有资源（用于页面卸载或重置）
+    cleanupAll: () => {
+      utils.cleanupPlugins();
+      utils.cleanupPjaxListeners();
+    },
   };
+
+  // 自动处理 PJAX 事件
+  document.addEventListener('pjax:before', () => {
+    // 在导航前清理旧的 PJAX 监听器（如果需要重新注册）
+    // 注意：这里不清理，因为监听器应该是持久的
+    // utils.cleanupPjaxListeners();
+  });
+  
+  document.addEventListener('pjax:complete', () => {
+    utils.reinitPlugins();
+  });
 
   // utils.dark.mode 当前模式 dark or light
   // utils.dark.toggle() 暗黑模式触发器
@@ -579,7 +861,7 @@
       container = document.querySelector(container);
     }
     if (!container) return;
-    
+
     const images = container.querySelectorAll('img');
     images.forEach((img) => {
       if (img.classList.contains('lazy')) return;
@@ -612,7 +894,7 @@
       window.lazyLoadInstance.update();
     }
   }
-  
+
 </script>
 
 <!-- required -->
@@ -689,107 +971,150 @@
 
 <!-- optional -->
 
-  <script type="module">
-  const el = document.getElementById('twikoo_container');
-  util.viewportLazyload(el, load_twikoo, false);
-
-  function load_twikoo() {
-    if (!el) return;
-    utils.js('https://gcore.jsdelivr.net/npm/twikoo@1.6/dist/twikoo.all.min.js', {defer: true}).then(function () {
-      const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
-      twikoo.init(Object.assign({"js":"https://gcore.jsdelivr.net/npm/twikoo@1.6/dist/twikoo.all.min.js","envId":"https://alextwikoo.netlify.app/.netlify/functions/twikoo"}, {
-        el: '#twikoo_container',
-        path: path,
-      }));
-    });
-  }
+  <script>
+  (function() {
+    const lazyload = false;
+    
+    function initTwikoo() {
+      const el = document.getElementById('twikoo_container');
+      if (!el) return;
+      
+      function load_twikoo() {
+        utils.js('https://gcore.jsdelivr.net/npm/twikoo@1.6/dist/twikoo.all.min.js', {defer: true}).then(function () {
+          const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
+          twikoo.init(Object.assign({"js":"https://gcore.jsdelivr.net/npm/twikoo@1.6/dist/twikoo.all.min.js","envId":"https://alextwikoo.netlify.app/.netlify/functions/twikoo"}, {
+            el: '#twikoo_container',
+            path: path,
+          }));
+        });
+      }
+      
+      util.viewportLazyload(el, load_twikoo, lazyload);
+    }
+    
+    // Store in global stellar namespace for PJAX reinitialization
+    window.stellar = window.stellar || {};
+    window.stellar.initComments = window.stellar.initComments || {};
+    window.stellar.initComments.twikoo = initTwikoo;
+    
+    // Initialize on page load
+    initTwikoo();
+  })();
 </script>
 
 
 
 <script defer>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+  const initServices = () => {
+    // 用于存储需要清理的资源
+    let timers = [];
+    
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"},"rss":{"js":"/js/services/rss.js"}}`));
     for (let id of Object.keys(ctx.services)) {
       const js = ctx.services[id].js;
       if (id == 'siteinfo') {
-        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
-        if (ctx.cardlinks?.length > 0) {
+        const cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (cardlinks?.length > 0) {
           utils.js(js, { defer: true }).then(function () {
-            setCardLink(ctx.cardlinks);
+            setCardLink(cardlinks);
           });
         }
+      } else if (id == 'ghinfo') {
+        const els = document.querySelectorAll('.ds-ghinfo');
+        if (els.length > 0) {
+          utils.js(js, { defer: true });
+        }
       } else if (id == 'voice') {
-        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
-        if (ctx.voiceAudios?.length > 0) {
+        const voiceAudios = document.querySelectorAll('.voice>audio');
+        if (voiceAudios?.length > 0) {
           utils.js(js, { defer: true }).then(function () {
-            createVoiceDom(ctx.voiceAudios);
+            createVoiceDom(voiceAudios);
           });
         }
       } else if (id == 'video') {
-        ctx.videos = document.querySelectorAll('.video>video');
-        if (ctx.videos?.length > 0) {
+        const videos = document.querySelectorAll('.video>video');
+        if (videos?.length > 0) {
           utils.js(js, { defer: true }).then(function () {
-            videoEvents(ctx.videos);
+            videoEvents(videos);
           });
         }
       } else if (id == 'download-file') {
-        ctx.files = document.querySelectorAll('.file');
-        if (ctx.files?.length > 0) {
+        const files = document.querySelectorAll('.chat-file');
+        if (files?.length > 0) {
           utils.js(js, { defer: true }).then(function () {
-            downloadFileEvent(ctx.files);
+            downloadFileEvent(files);
           });
         }
       } else {
         const els = document.getElementsByClassName(`ds-${id}`);
         if (els?.length > 0) {
           utils.jq(() => {
-            if (id == 'timeline' || 'memos' || 'marked') {
+            if (id == 'timeline' || id == 'memos' || id == 'marked') {
               utils.js(deps.marked).then(function () {
                 utils.js(js, { defer: true });
               });
             } else {
               utils.js(js, { defer: true });
             }
-          });
+          }, false);
         }
+      }
+    }
+
+    // search
+    if (ctx.search && typeof searchFunc === 'function') {
+      const $inputArea = $("input#search-input");
+      if ($inputArea.length > 0 && !$inputArea[0]._searchInitialized) {
+        const path = ctx.search.path.startsWith('/') ? ctx.root + ctx.search.path.substring(1) : ctx.root + ctx.search.path;
+        const filter = $inputArea.attr('data-filter') || '';
+        searchFunc(path, filter, 'search-wrapper', 'search-input', 'search-result');
+        // 标记为已初始化，防止重复绑定
+        $inputArea[0]._searchInitialized = true;
       }
     }
 
     // chat iphone time
     let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+    let firstAdjustInterval = null;
+    let mainInterval = null;
 
     if (phoneTimes.length > 0) {
       NowTime();
-      var date = new Date();
-      var sec = date.getSeconds();
-      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
-    }
+      const date = new Date();
+      const sec = date.getSeconds();
+      firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+      timers.push(firstAdjustInterval);
 
-    function firstAdjustTime() {
-      NowTime();
-      clearInterval(firstAdjustInterval);
-      setInterval(NowTime, 1000 * 60);
-    }
-
-    function NowTime() {
-      for (let i = 0; i < phoneTimes.length; ++i) {
-        var timeSpan = phoneTimes[i];
-        var date = new Date();
-        var hour = date.getHours();
-        var min = date.getMinutes();
-        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      function firstAdjustTime() {
+        NowTime();
+        if (firstAdjustInterval) {
+          clearInterval(firstAdjustInterval);
+          firstAdjustInterval = null;
+        }
+        mainInterval = setInterval(NowTime, 1000 * 60);
+        timers.push(mainInterval);
       }
-    };
 
-    function check(val) {
-      if (val < 10) {
-        return ("0" + val);
+      function NowTime() {
+        for (let i = 0; i < phoneTimes.length; ++i) {
+          const timeSpan = phoneTimes[i];
+          const date = new Date();
+          const hour = date.getHours();
+          const min = date.getMinutes();
+          timeSpan.innerHTML = check(hour) + ":" + check(min);
+        }
+      };
+
+      function check(val) {
+        if (val < 10) {
+          return ("0" + val);
+        }
+        return (val);
       }
-      return (val);
     }
 
-    // chat quote
+    // chat quote - 存储事件监听器以便清理
+    const quoteClickHandlers = new Map();
     const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
       entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
           observer.unobserve(entry.target);
@@ -804,7 +1129,7 @@
 
     var chatQuotes = document.querySelectorAll(".chat .talk .quote");
     chatQuotes.forEach((quote) => {
-      quote.addEventListener('click', function () {
+      const handler = function () {
         var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
         if (chatCellDom) {
           var chatDiv = chatCellDom.parentElement;
@@ -823,9 +1148,41 @@
           }
           chat_quote_obverser.observe(chatCellDom);
         }
-      });
+      };
+      quote.addEventListener('click', handler);
+      quoteClickHandlers.set(quote, handler); // 保存处理器引用
     });
-  });
+
+    // 返回清理函数，用于清理定时器和观察器
+    return () => {
+      // 清理所有定时器（包括可能未完成的 firstAdjustInterval）
+      timers.forEach(timer => {
+        if (timer) clearInterval(timer);
+      });
+      timers = [];
+      if (firstAdjustInterval) {
+        clearInterval(firstAdjustInterval);
+        firstAdjustInterval = null;
+      }
+      if (mainInterval) {
+        clearInterval(mainInterval);
+        mainInterval = null;
+      }
+      
+      // 断开观察器
+      if (chat_quote_obverser) {
+        chat_quote_obverser.disconnect();
+      }
+      
+      // 移除所有 click 事件监听器
+      quoteClickHandlers.forEach((handler, quote) => {
+        quote.removeEventListener('click', handler);
+      });
+      quoteClickHandlers.clear();
+    };
+  };
+
+  utils.initPlugin(initServices, 'services');
 </script>
 
 <script>
@@ -880,7 +1237,7 @@
   }
 </script>
 <script>
-  window.addEventListener('DOMContentLoaded', (event) => {
+  utils.initPlugin(() => {
     const swiper_api = document.getElementById('swiper-api');
     if (swiper_api != undefined) {
       utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
@@ -903,23 +1260,27 @@
         });
       })
     }
-  });
+  }, 'swiper');
 </script>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    window.codeElements = document.querySelectorAll('.code');
-    if (window.codeElements.length > 0) {
+  utils.initPlugin(() => {
+    const codeElements = document.querySelectorAll('.code');
+    if (codeElements.length > 0) {
       ctx.copycode = {
         default_text: `Copy`,
         success_text: `Copied`,
         toast: `复制成功`,
       };
-      utils.js('/js/plugins/copycode.js');
+      utils.js('/js/plugins/copycode.js', { defer: true }).then(() => {
+        if (typeof createCopyButtons === 'function') {
+          createCopyButtons(codeElements);
+        }
+      });
     }
-  });
+  }, 'copycode');
 </script>
 
 
 <!-- inject -->
 
-</div></body></html>
+</div><div class="page-loading-bar"><img src="https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd"></div></body></html>
